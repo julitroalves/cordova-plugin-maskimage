@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-maskimage" version="1.0">
+    <name>MaskImage</name>
+    <description>
+		This Cordova plugin provides JavaScript API, that allows you to criate images with mask.
+	</description>
+
+    <js-module src="www/MaskImage.js" name="MaskImage">
+        <clobbers target="cordova.plugins.MaskImage" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MaskImage"> 
+                <param name="android-package" value="com.julitroalves.MaskImage"/>
+            </feature>
+        </config-file>
+
+		<source-file src="src/android/MaskImage.java" target-dir="src/com/julitroalves" />
+    </platform>
+</plugin>
